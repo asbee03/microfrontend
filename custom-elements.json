@@ -1,0 +1,284 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "api/roster.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "handler",
+          "parameters": [
+            {
+              "name": "request"
+            },
+            {
+              "name": "res"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "handler",
+            "module": "api/roster.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/character-card.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CharacterCard",
+          "members": [
+            {
+              "kind": "method",
+              "name": "toggleEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "Name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"BALJEET\"",
+              "privacy": "public",
+              "attribute": "Name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "Details",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Baljeet is what every brown person aspires to be!\"",
+              "privacy": "public",
+              "attribute": "Details",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "img",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"https://i.redd.it/zckxgrywjpk61.jpg\"",
+              "privacy": "public",
+              "attribute": "img",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "nickname",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"The Brown King\"",
+              "privacy": "public",
+              "attribute": "nickname",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "topText",
+              "privacy": "public",
+              "attribute": "topText",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "bottomText",
+              "privacy": "public",
+              "attribute": "bottomText",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "opened",
+              "privacy": "public",
+              "attribute": "opened",
+              "reflects": true
+            }
+          ],
+          "events": [
+            {
+              "name": "opened-changed",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "Name",
+              "fieldName": "Name"
+            },
+            {
+              "name": "Details",
+              "fieldName": "Details"
+            },
+            {
+              "name": "topText",
+              "fieldName": "topText"
+            },
+            {
+              "name": "bottomText",
+              "fieldName": "bottomText"
+            },
+            {
+              "name": "nickname",
+              "fieldName": "nickname"
+            },
+            {
+              "name": "img",
+              "fieldName": "img"
+            },
+            {
+              "name": "opened",
+              "fieldName": "opened"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "character-card",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CharacterCard",
+          "declaration": {
+            "name": "CharacterCard",
+            "module": "src/character-card.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "character-card",
+          "declaration": {
+            "name": "CharacterCard",
+            "module": "src/character-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/team-roster.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TeamRoster",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "updateRoster"
+            },
+            {
+              "kind": "field",
+              "name": "players",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "privacy": "public",
+              "attribute": "players"
+            },
+            {
+              "kind": "field",
+              "name": "team",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Character Team\"",
+              "privacy": "public",
+              "attribute": "team"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "characters",
+              "fieldName": "characters"
+            },
+            {
+              "name": "team",
+              "fieldName": "team"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TeamRoster",
+          "declaration": {
+            "name": "TeamRoster",
+            "module": "src/team-roster.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "TeamRoster",
+            "module": "src/team-roster.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/character-card.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "App"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/character-card.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "App",
+          "declaration": {
+            "name": "App",
+            "module": "stories/character-card.stories.js"
+          }
+        }
+      ]
+    }
+  ]
+}

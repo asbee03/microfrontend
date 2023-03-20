@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-family: sans-serif;
+      background-color: lightblue;
+      
+    }
+
+   meme-maker {
+    border:black;
+    border-width: 1px;
+  } 
+  </style>
+  <title>character-card</title>
+</head>
+
+<body>
+  <div class="buttons">
+    <button class="copy" >Copy</button>
+  
+    <button class="toggleBackGroundColor" >Change Background Color</button>
+  
+    <button class="changeTitle">Change Title</button>
+  
+    <button class="deleteButton">Delete</button>
+    
+    <button class="detailButton">Detail</button>
+  
+      
+<div id = "app">
+  <character-card>
+    
+    <div slot="nickname"> 
+      <h2>"The Brown King"</h2> 
+      </div>
+
+      <div slot="img">
+        <meme-maker image-url="https://images7.memedroid.com/images/UPLOADED94/54282dee1ea31.jpeg" top-text="Baljeet" bottom-text="Me:"></meme-maker>
+      </div>
+
+
+</character-card>
+</div>
+
+  <script type="module" src="./src/character-card.js"></script>
+
+<script>
+
+document.querySelector('.copy').addEventListener("click", function(e){   
+  
+  const cloneCard = document.querySelector('character-card').cloneNode();
+  document.querySelector('#app').appendChild(cloneCard); 
+  
+});
+
+document.querySelector(".deleteButton").addEventListener("click", function(e){ 
+  if (document.querySelector('#app :last-child') != document.querySelector('character-card')) {
+  document.querySelector('#app :last-child').remove();
+} else {
+  alert('BALJEET');
+}
+  
+});
+
+
+document.querySelector('.detailButton').addEventListener("mouseenter", function (e) {
+});
+
+
+
+document.querySelector('.detailButton').addEventListener("click", function(e){
+  const paragraph = document.querySelector('character-card').shadowRoot.querySelector('.text'); 
+  if (paragraph.style.display === "none"){
+    paragraph.style.display = "block"
+  } else {
+    paragraph.style.display = "none";
+  }
+  
+});
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+document.querySelector(".toggleBackGroundColor").addEventListener("click", function(e){   
+  document.querySelector('character-card').shadowRoot.querySelector('.all').style.backgroundColor = getRandomColor(); 
+});
+
+document.querySelector(".changeTitle").addEventListener("click", function(e){  
+  let characterName = prompt("Name the card");
+  if (characterName) {
+    document.querySelector('character-card').characterName = characterName;
+  }
+});
+
+</script>
+</body>
+
+</html>
+
